@@ -10,13 +10,21 @@ namespace login_cs.Model
 
     public bool ValidatePassword(string input)
     {
-      return _password == input;
+      if (_password == input)
+      {
+        LoggedIn = true;
+        return true;
+      }
+      else
+      {
+        return false;
+      }
     }
     public User(string username, string password)
     {
       Username = username;
       _password = password;
-
+      LoggedIn = false;
     }
 
   }
